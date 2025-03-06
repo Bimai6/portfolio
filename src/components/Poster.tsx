@@ -1,4 +1,5 @@
-import "/src/styles.css"
+import "/src/styles.css";
+import { ImageLinks } from "../utils/ImageLinks";
 
 const Poster = () => {
     return (
@@ -14,9 +15,9 @@ const Poster = () => {
                     <p>DEVELOPER</p>
                 </div>
             </div>
-            <div className="bg-gray-500 w-full h-4/6 border-1 border-white">
-                <img className="m-auto pt-14 w-96"
-                src="https://res.cloudinary.com/demqnwfff/image/upload/v1741285597/mepurple_ljpwvb.png" alt="Mario Lebrero's image"/>
+            <div className="bg-gray-500 w-full h-4/6 border-1 border-white ">
+                <img className="m-auto pt-8 w-4/6 transition-transform duration-300 hover:scale-105"
+                src={ImageLinks.selfie} alt="Mario Lebrero's image"/>
             </div>
         </div>
     )
