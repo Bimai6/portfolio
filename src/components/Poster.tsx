@@ -15,7 +15,7 @@ const Poster = () => {
                 </div>
             </div>
             <div className="bg-gray-500 w-full h-4/6 border-1 border-white">
-                <img className="m-auto pt-18 w-90"
+                <img className="m-auto pt-14 w-96"
                 src="https://res.cloudinary.com/demqnwfff/image/upload/v1741285597/mepurple_ljpwvb.png" alt="Mario Lebrero's image"/>
             </div>
         </div>
