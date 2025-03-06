@@ -2,7 +2,7 @@ import "/src/styles.css"
 
 const Poster = () => {
     return (
-        <div className="bg-white h-full w-1/3">
+        <div className="bg-white h-screen w-1/3 overflow-y-hidden">
             <div className="text-purple-800 font-extrabold">
                 <div className="text-8xl">
                     <p>MARIO</p>
@@ -14,8 +14,9 @@ const Poster = () => {
                     <p>DEVELOPER</p>
                 </div>
             </div>
-            <div className="bg-purple-700">
-                <img src="" alt="Mario Lebrero's image" />
+            <div className="bg-gray-500 w-full h-4/6 border-1 border-white">
+                <img className="m-auto pt-18 w-90"
+                src="https://res.cloudinary.com/demqnwfff/image/upload/v1741285597/mepurple_ljpwvb.png" alt="Mario Lebrero's image"/>
             </div>
         </div>
     )
