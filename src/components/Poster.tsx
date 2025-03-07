@@ -15,7 +15,7 @@ const Poster = () => {
                     <p>DEVELOPER</p>
                 </div>
             </div>
-            <div className="bg-gray-500 w-full h-4/6 border-1 border-white ">
+            <div className="bg-gray-500 w-full h-4/6">
                 <img className="m-auto pt-7 w-4/6 transition-transform duration-300 hover:scale-105"
                 src={ImageLinks.selfie} alt="Mario Lebrero's image"/>
             </div>

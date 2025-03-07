@@ -1,4 +1,4 @@
-import  { token } from '../../secret'
+import { token } from '../../secret';
 export interface Repo {
   name: string;
   html_url: string;
