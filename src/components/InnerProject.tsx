@@ -40,7 +40,7 @@ const InnerProject = ({ repos }: InnerProjectProps) => {
   return (
     <div className="flex flex-row h-screen">
       <div className="flex flex-col w-full bg-white text-purple-800">
-        <div className="flex flex-row justify-between items-center bg-purple-800 text-white py-7 px-10">
+        <div className="flex flex-row justify-between items-end bg-purple-800 text-white py-7 px-10">
           <p className="font-extrabold text-6xl">{handleTitle(repo.name)}</p>
           <p className="text-2xl">{handleDate(repo.created_at)}</p>
         </div>
@@ -59,22 +59,30 @@ const InnerProject = ({ repos }: InnerProjectProps) => {
                 ))}
               </div>
               <div className="flex justify-center gap-4 inset-0 items-center my-5">
-                <button onClick={prevSlide} className="bg-purple-800 text-white rounded-xl px-3 ml-3">
+                <button onClick={prevSlide} className="hover:cursor-pointer bg-purple-800 text-white rounded-xl px-3 ml-3">
                   ❮
                 </button>
-                <button onClick={nextSlide} className="bg-purple-800 text-white rounded-xl px-3 mr-3">
+                <button onClick={nextSlide} className="hover:cursor-pointer bg-purple-800 text-white rounded-xl px-3 mr-3">
                   ❯
                 </button>
               </div>
             </div>
-            <div className="flex flex-col flex-grow">
-              <div></div>
-              <div></div>
+            <div className="flex flex-col h-full w-3/6">
+              <div className="border-b border-purple-800 min-h-4/6 max-h-4/6">
+                <p className="p-5 pt-12 text-sm sm:text-base lg:text-2xl xl:text-3xl">{repo.description}</p>
+              </div>
+              <div className="flex flex-row justify-center items-center gap-20 min-h-2/6 max-h-2/6">
+                <button className="bg-purple-800 text-white text-4xl px-6 py-2 rounded-full"><a href={repo.html_url} target="_blank" rel="noopener noreferrer">Code</a></button>
+              </div>
             </div>
           </div>
         </div>
+        <div className="flex flex-row items-center h-full">
+          <p className="ml-10 text-4xl">Stack:</p>
+          <div></div>
+        </div>
       </div>
-      <div className="w-20 h-screen bg-gray-500" onClick={() => navigate("/")} />
+      <div className="transition-all duration-200 ease-in-out hover:text-5xl hover:w-25 hover:cursor-pointer w-20 h-screen bg-gray-500 flex justify-center text-white text-4xl items-center" onClick={() => navigate("/")}>❯</div>
     </div>
   );
 };
