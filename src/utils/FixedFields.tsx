@@ -5,5 +5,5 @@ export function handleTitle(name: string) {
 export function handleDate(date: string) {
     const dateArray = date.split('T');
     const datePieces = dateArray[0].split('-');
-    return datePieces[2] + '.' + datePieces[1] + '.' + datePieces[0];
+    return datePieces[2] + '.' + datePieces[1] + '.' + datePieces[0].substring(2,4);
 }

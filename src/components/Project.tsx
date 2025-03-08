@@ -21,7 +21,7 @@ const Project = ({ repos }: ProjectProps) => {
           onMouseLeave={() => setHoveredRepo(null)}
           onClick={() => navigate(`/project/${repo.name}`)}
         >
-          <p className={`pl-4 pr-5 ${hoveredRepo === repo.name ? "text-lg" : "text-6xl"} font-extrabold pb-7`}>
+          <p className={`pl-4 pr-10 ${hoveredRepo === repo.name ? "text-lg" : "text-6xl"} font-extrabold pb-7`}>
             {hoveredRepo === repo.name ? repo.description ?? handleTitle(repo.name) : handleTitle(repo.name)}
           </p>
           <p className="pr-6 text-2xl pb-7">{handleDate(repo.created_at)}</p>
