@@ -38,34 +38,43 @@ const InnerProject = ({ repos }: InnerProjectProps) => {
   };
 
   return (
-    <div className="flex flex-row">
-      <div className="flex flex-col w-full h-screen bg-white text-purple-800">
-        <div className="flex flex-row justify-between items-end bg-purple-800 text-white pt-7 pb-7">
-          <p className="font-extrabold pl-15 text-6xl">{handleTitle(repo.name)}</p>
-          <p className="pr-10 text-2xl">{handleDate(repo.created_at)}</p>
+    <div className="flex flex-row h-screen">
+      <div className="flex flex-col w-full bg-white text-purple-800">
+        <div className="flex flex-row justify-between items-center bg-purple-800 text-white py-7 px-10">
+          <p className="font-extrabold text-6xl">{handleTitle(repo.name)}</p>
+          <p className="text-2xl">{handleDate(repo.created_at)}</p>
         </div>
         <div className="flex flex-col">
           <div className="flex flex-row border-b border-purple-800">
-            <div id="default-carousel" className="relative h-full w-3/6 border-r border-purple-800" data-carousel="slide">
-              <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <div id="default-carousel" className="w-4/6 border-r border-purple-800">
+              <div className="overflow-hidden h-[450px]">
                 {images.map((image, index) => (
-                  <div key={index} className={`${index === currentIndex ? "block" : "hidden"} duration-700 ease-in-out`} data-carousel-item>
-                      <img src={image} className="absolute block max-w-full max-h-[80%] object-contain -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt={`Slide ${index + 1}`} />
+                  <div key={index} className={`${index === currentIndex ? "block" : "hidden"} h-full flex justify-center transition-all duration-700 ease-in-out`}>
+                    <img
+                      src={image}
+                      className="mt-5 h-full max-w-[90%] object-contain"
+                      alt={`Slide ${index + 1}`}
+                    />
                   </div>
                 ))}
               </div>
-              <button onClick={prevSlide} className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-500 text-white p-2 ml-3">❮</button>
-              <button onClick={nextSlide} className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-500 text-white p-2 mr-3">❯</button>
+              <div className="flex justify-center gap-4 inset-0 items-center my-5">
+                <button onClick={prevSlide} className="bg-purple-800 text-white rounded-xl px-3 ml-3">
+                  ❮
+                </button>
+                <button onClick={nextSlide} className="bg-purple-800 text-white rounded-xl px-3 mr-3">
+                  ❯
+                </button>
+              </div>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col flex-grow">
               <div></div>
               <div></div>
             </div>
           </div>
-          <div></div>
         </div>
       </div>
-      <div className="w-20 h-screen bg-gray-500" onClick={() => navigate("/")}></div>
+      <div className="w-20 h-screen bg-gray-500" onClick={() => navigate("/")} />
     </div>
   );
 };
