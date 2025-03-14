@@ -8,7 +8,7 @@ interface HomeProps {
 
 const Home = ({ repos }: HomeProps) => {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row h-full">
       <ProjectList repos={repos} />
       <Poster />
     </div>
