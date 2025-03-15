@@ -12,7 +12,7 @@ const Project = ({ repos }: ProjectProps) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col justify-start w-full h-5/6 mb-25">
+    <div className="flex flex-col justify-start w-full h-5/6 mb-28">
       {repos.map((repo) => (
         <div
           key={repo.name}

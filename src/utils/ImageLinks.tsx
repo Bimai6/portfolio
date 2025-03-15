@@ -11,6 +11,9 @@ export const ProjectImages: Record<string,string[]> = {
     mugentheseinenmangagate: ['https://res.cloudinary.com/demqnwfff/image/upload/v1741440318/Screenshot1_rahmvh.png', 'https://res.cloudinary.com/demqnwfff/image/upload/v1741440339/Screenshot2_gz6tck.png']
 }
 
-export const ProjectStacks: Record<string,string> ={
-
+export const ProjectStacks: Record<string,string[]> ={
+    magnoliahotels: [],
+    theuss: [],
+    eyeofthedoom: [],
+    mugentheseinenmangagate: []
 }
