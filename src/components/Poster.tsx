@@ -6,7 +6,7 @@ const Poster = () => {
     return (
         <div className="flex flex-col bg-white h-screen w-1/3 overflow-y-hidden">
             <div className="flex flex-col text-purple-800 font-extrabold h-full w-full">
-                <div className="name_text flex flex-col text-8xl pl-3">
+                <div className="name_text flex flex-col text-8xl px-3 mr-3">
                     <p>MARIO</p>
                     <p>LEBRERO</p>
                     <p>GARCIA</p>
