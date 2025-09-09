@@ -1,12 +1,8 @@
 import Poster from "../components/Poster";
 import ProjectList from "../components/ProjectList";
-import { Repo } from "../fetch/Fetch";
+import { ReposProps } from "../types/props";
 
-interface HomeProps {
-  repos: Repo[];
-}
-
-const Home = ({ repos }: HomeProps) => {
+const Home = ({ repos }: ReposProps) => {
   return (
     <div className="flex flex-row h-full">
       <ProjectList repos={repos} />

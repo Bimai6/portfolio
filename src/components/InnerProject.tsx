@@ -1,14 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { Repo } from "../fetch/Fetch";
-import { handleDate, handleTitle } from "../utils/FixedFields";
+import { Repo } from "../models/Repo";
 import { useEffect, useState } from "react";
-import { ProjectImages } from "../utils/ImageLinks";
+import { ProjectImages } from "../utils/extraRepoFields";
+import { ReposProps } from "../types/props";
 
-interface InnerProjectProps {
-  repos: Repo[];
-}
-
-const InnerProject = ({ repos }: InnerProjectProps) => {
+const InnerProject = ({ repos }: ReposProps) => {
   const { repoName } = useParams();
   const navigate = useNavigate();
   const [repo, setRepo] = useState<Repo | null>(null);
@@ -41,8 +37,8 @@ const InnerProject = ({ repos }: InnerProjectProps) => {
     <div className="flex flex-row h-screen">
       <div className="flex flex-col w-full bg-white text-purple-800">
         <div className="flex flex-row justify-between items-end bg-purple-800 text-white py-7 px-10">
-          <p className="font-extrabold text-6xl">{handleTitle(repo.name)}</p>
-          <p className="text-2xl">{handleDate(repo.created_at)}</p>
+          <p className="font-extrabold text-6xl">{repo.formattedTitle}</p>
+          <p className="text-2xl">{repo.formattedDate}</p>
         </div>
         <div className="flex flex-col">
           <div className="flex flex-row border-b border-purple-800">

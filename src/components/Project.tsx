@@ -1,13 +1,8 @@
-import { Repo } from "../fetch/Fetch";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { handleDate, handleTitle } from "../utils/FixedFields";
+import { ReposProps } from "../types/props";
 
-interface ProjectProps {
-  repos: Repo[];
-}
-
-const Project = ({ repos }: ProjectProps) => {
+const Project = ({ repos }: ReposProps) => {
   const [hoveredRepo, setHoveredRepo] = useState<string | null>(null);
   const navigate = useNavigate();
 
@@ -22,9 +17,9 @@ const Project = ({ repos }: ProjectProps) => {
           onClick={() => navigate(`/project/${repo.name}`)}
         >
           <p className={`pl-4 pr-10 ${hoveredRepo === repo.name ? "text-lg" : "text-6xl"} font-extrabold pb-7`}>
-            {hoveredRepo === repo.name ? repo.description ?? handleTitle(repo.name) : handleTitle(repo.name)}
+            {hoveredRepo === repo.name ? repo.description ?? repo.formattedTitle : repo.formattedTitle}
           </p>
-          <p className="pr-6 text-2xl pb-7">{handleDate(repo.created_at)}</p>
+          <p className="pr-6 text-2xl pb-7">{repo.formattedDate}</p>
         </div>
       ))}
     </div>

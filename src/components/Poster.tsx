@@ -1,5 +1,4 @@
 import "/src/styles.css";
-import { ImageLinks } from "../utils/ImageLinks";
 import './textStyle.css';
 
 const Poster = () => {
@@ -18,7 +17,7 @@ const Poster = () => {
             </div>
             <div className="bg-gray-500 w-full min-h-[48vh] flex-1 flex items-center justify-center p-4">
                 <img className="h-auto w-4/6"
-                src={ImageLinks.selfie} alt="Mario Lebrero's image"/>
+                src="https://res.cloudinary.com/demqnwfff/image/upload/v1741285597/mepurple_ljpwvb.png" alt="Mario Lebrero's portrait"/>
             </div>
         </div>
     )
