@@ -1,9 +1,3 @@
-export const ImageLinks: Record<string, string> = {
-    selfie: 'https://res.cloudinary.com/demqnwfff/image/upload/v1741285597/mepurple_ljpwvb.png',
-    github: 'https://res.cloudinary.com/demqnwfff/image/upload/v1741289209/gh-white_q5jbqn.png',
-    linkedin: 'https://res.cloudinary.com/demqnwfff/image/upload/v1741289209/li-white_ogkbhy.png'
-};
-
 export const ProjectImages: Record<string,string[]> = {
     magnoliahotels: ['https://res.cloudinary.com/dk1g12n2h/image/upload/v1740390718/homePage_v6r72r.png', 'https://res.cloudinary.com/dk1g12n2h/image/upload/v1740473446/Restaurante_s4pswh.png', 'https://res.cloudinary.com/dk1g12n2h/image/upload/v1740473324/reservaDesktop_eprhaw.png', 'https://res.cloudinary.com/dk1g12n2h/image/upload/v1740472850/cartaDesktop_dfdc5y.png'],
     theuss: ['https://res.cloudinary.com/demqnwfff/image/upload/v1741439022/screenshot1_ltlrda.png', 'https://res.cloudinary.com/demqnwfff/image/upload/v1741439032/screenshot2_phyj6a.png'],
@@ -17,3 +11,4 @@ export const ProjectStacks: Record<string,string[]> ={
     eyeofthedoom: [],
     mugentheseinenmangagate: []
 }
+
