@@ -3,3 +3,13 @@ import { Repo } from "../models/Repo";
 export interface ReposProps {
     repos: Repo[];
 }
+
+export interface LinkProps {
+    url: string;
+    text: string;
+}
+
+export interface SlideProps {
+    event: () => void;
+    char: string;
+}
