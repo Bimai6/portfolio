@@ -1,0 +1,17 @@
+export const techs: Record<string, { logo: string }> = {
+    HTML: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757607932/html-124-svgrepo-com_qbhi7x.svg"},
+    CSS: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757608125/css3-02-svgrepo-com_j8kaoa.svg"},
+    JavaScript: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757608193/javascript-155-svgrepo-com_s3fly8.svg"},
+    Python: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757608265/python-127-svgrepo-com_jrvpzr.svg"},
+    React: { logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757608314/react-svgrepo-com_nj6xw0.svg"},
+    Node: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757608369/node-js-svgrepo-com_jjgvzr.svg"},
+    Django: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757608434/django-svgrepo-com_gi7pgh.svg"},
+    PostgreSQL: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757608494/postgresql-svgrepo-com_v95mld.svg"},
+    MongoDB: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757608790/mongodb-svgrepo-com_frpubq.svg"},
+    Vercel: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757608857/vercel-fill-svgrepo-com_sbhzq6.svg"},
+    Render: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757609488/render_re2194.png"},
+    Supabase: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757609725/supabase_gg5ojb.png"},
+    Tailwind: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757609065/tailwind-svgrepo-com_s9gcpr.svg"},
+    Bootstrap: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757609131/bootstrap-fill-svgrepo-com_nsqoiz.svg"},
+    MUI: {logo: "https://res.cloudinary.com/dus7e3jkj/image/upload/v1757609257/material-ui-svgrepo-com_h63hbw.svg"},
+};
