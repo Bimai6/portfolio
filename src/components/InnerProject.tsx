@@ -1,84 +1,106 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { Repo } from "../models/Repo";
 import { useEffect, useState } from "react";
-import { ProjectImages } from "../utils/extraRepoFields";
+import { Project } from "../types/project";
 import { ReposProps } from "../types/props";
+import { techs } from "../data/techs";
+import LinkButton from "./LinkButton";
+import SlideButton from "./SlideButton";
 
 const InnerProject = ({ repos }: ReposProps) => {
   const { repoName } = useParams();
   const navigate = useNavigate();
-  const [repo, setRepo] = useState<Repo | null>(null);
+  const [project, setProject] = useState<Project | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (repoName) {
-      const selectedRepo = repos.find((repo) => repo.name === repoName);
-      setRepo(selectedRepo ?? null);
+      const selectedProject = repos.find((repo) => repo.name === repoName);
+      setProject(selectedProject ?? null);
     }
   }, [repoName, repos]);
 
-  if (!repo) {
+  if (!project) {
     navigate("/");
     return null;
   }
 
-  const normalizeRepoName = (name: string) => name.toLowerCase().replace(/[-_ ]/g, "");
-  const images = ProjectImages[normalizeRepoName(repo.name)] || [];
+  const images = project.images || [];
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % images.length);
+  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
     <div className="flex flex-row h-screen">
       <div className="flex flex-col w-full bg-white text-purple-800">
         <div className="flex flex-row justify-between items-end bg-purple-800 text-white py-7 px-10">
-          <p className="font-extrabold text-6xl">{repo.formattedTitle}</p>
-          <p className="text-2xl">{repo.formattedDate}</p>
+          <p className="font-extrabold text-6xl">{project.formattedTitle}</p>
+          <p className="text-2xl">{project.formattedDate}</p>
         </div>
-        <div className="flex flex-col">
-          <div className="flex flex-row border-b border-purple-800">
-            <div id="default-carousel" className="w-4/6 border-r border-purple-800">
-              <div className="overflow-hidden h-[450px]">
-                {images.map((image, index) => (
-                  <div key={index} className={`${index === currentIndex ? "block" : "hidden"} h-full flex justify-center transition-all duration-700 ease-in-out`}>
-                    <img
-                      src={image}
-                      className="mt-5 h-full max-w-[90%] object-contain"
-                      alt={`Slide ${index + 1}`}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="flex justify-center gap-4 inset-0 items-center my-5">
-                <button onClick={prevSlide} className="hover:cursor-pointer bg-purple-800 text-white rounded-xl px-3 ml-3">
-                  ❮
-                </button>
-                <button onClick={nextSlide} className="hover:cursor-pointer bg-purple-800 text-white rounded-xl px-3 mr-3">
-                  ❯
-                </button>
-              </div>
+
+        <div className="flex flex-row border-b border-purple-800">
+          <div id="carousel" className="w-4/6 border-r border-purple-800">
+            <div className="overflow-hidden h-[450px]">
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className={`${
+                    index === currentIndex ? "block" : "hidden"
+                  } h-full flex justify-center transition-all duration-700 ease-in-out`}
+                >
+                  <img
+                    src={image}
+                    alt={`Slide ${index + 1}`}
+                    className="mt-5 h-full max-w-[90%] object-contain"
+                  />
+                </div>
+              ))}
             </div>
-            <div className="flex flex-col h-full w-3/6">
-              <div className="border-b border-purple-800 min-h-4/6 max-h-4/6">
-                <p className="p-5 pt-12 text-sm sm:text-base lg:text-2xl xl:text-3xl">{repo.description}</p>
-              </div>
-              <div className="flex flex-row justify-center items-center gap-20 min-h-2/6 max-h-2/6">
-                <button className="bg-purple-800 text-white text-4xl px-6 py-2 rounded-full"><a href={repo.html_url} target="_blank" rel="noopener noreferrer">Code</a></button>
-              </div>
+            <div className="flex justify-center gap-4 my-5">
+              <SlideButton event={prevSlide} char="❮"/>
+              <SlideButton event={nextSlide} char="❯"/>
+            </div>
+          </div>
+
+          <div className="flex flex-col h-full w-3/6">
+            <div className="border-b border-purple-800 min-h-4/6 max-h-4/6">
+              <p className="p-5 pt-12 text-sm sm:text-base lg:text-2xl xl:text-3xl">
+                {project.description}
+              </p>
+            </div>
+            <div className="flex flex-row justify-center items-center gap-10 min-h-2/6 max-h-2/6">
+              {project.deployment && (
+                <LinkButton url={project.deployment} text="Demo"/>
+              )}
+              <LinkButton url={project.html_url} text="Code"/>
             </div>
           </div>
         </div>
-        <div className="flex flex-row items-center h-full">
-          <p className="ml-10 text-4xl">Stack:</p>
-          <div></div>
+
+        <div className="flex flex-row items-center p-10 gap-4 flex-wrap w-full h-full">
+          <p className="text-4xl w-full mb-5">Stack:</p>
+          <div className="flex place-items-center w-full gap-4">
+            {project.stack?.map((techName) => {
+              const tech = techs[techName];
+              return tech ? (
+              <img
+                key={techName}
+                src={tech.logo}
+                alt={techName}
+                title={techName}
+                className="h-30 w-30"
+              />
+              ) : null;
+            })}
+          </div>
         </div>
       </div>
-      <div className="transition-all duration-200 ease-in-out hover:text-5xl hover:w-25 hover:cursor-pointer w-20 h-screen bg-gray-500 flex justify-center text-white text-4xl items-center" onClick={() => navigate("/")}>❯</div>
+
+      <div
+        className="transition-all duration-200 ease-in-out hover:text-5xl hover:w-25 hover:cursor-pointer w-20 h-screen bg-gray-500 flex justify-center text-white text-4xl items-center"
+        onClick={() => navigate("/")}
+      >
+        ❯
+      </div>
     </div>
   );
 };

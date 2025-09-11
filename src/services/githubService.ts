@@ -1,6 +1,8 @@
 import { token } from "../../secret";
 import { Repo } from "../models/Repo";
 import { selectedRepos } from "../config/criteria";
+import { Project } from "../types/project";
+import { projectExtras } from "../data/projectExtraFields";
 
 export async function getRepos(): Promise<Repo[]> {
   try {
@@ -13,7 +15,7 @@ export async function getRepos(): Promise<Repo[]> {
 
     const data = await response.json();
 
-    const publicRepos = data
+    const repos = data
       .filter((repo: any) => selectedRepos.includes(repo.name))
       .map(
         (repo: any) =>
@@ -27,7 +29,14 @@ export async function getRepos(): Promise<Repo[]> {
           )
       );
 
-    return publicRepos;
+    const projects: Project[] = repos.map((repo: Repo) => {
+      const extras = projectExtras[repo.name] ?? {};
+      Object.assign(repo, extras);
+      return repo as Project;
+    });
+
+
+    return projects;
   } catch (error) {
     console.error("Error fetching repos:", error);
     return [];
