@@ -11,7 +11,7 @@ const Project = ({ repos }: ReposProps) => {
       {repos.map((repo) => (
         <div
           key={repo.name}
-          className="hover:bg-white hover:cursor-pointer hover:text-purple-800 flex flex-row items-end justify-between w-full h-1/6 text-white border-b border-white"
+          className={`hover:bg-white hover:cursor-pointer hover:text-purple-800 flex flex-row items-end justify-between w-full h-1/6 text-white ${hoveredRepo === repo.name ? "border-r border-purple-800" : "border-b border-white"}`}
           onMouseEnter={() => setHoveredRepo(repo.name)}
           onMouseLeave={() => setHoveredRepo(null)}
           onClick={() => navigate(`/project/${repo.name}`)}
