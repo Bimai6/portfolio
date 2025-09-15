@@ -62,10 +62,13 @@ const InnerProject = ({ repos }: ReposProps) => {
           </div>
 
           <div className="flex flex-col h-full w-3/6">
-            <div className="border-b border-purple-800 min-h-4/6 max-h-4/6">
-              <p className="p-5 pt-12 text-sm sm:text-base lg:text-2xl xl:text-3xl">
-                {project.description}
-              </p>
+            <div className="pl-5 border-b border-purple-800 min-h-4/6 max-h-4/6">
+                <ul >
+                  <li className="pb-4 pt-12 text-sm sm:text-base lg:text-2xl xl:text-3xl">Achievements:</li>
+                  {project.achievements?.map((achievement, i) => 
+                    <li key={i} className="text-xs sm:text-sm lg:text-xl xl:text-2xl">{achievement}</li>
+                  )}
+                </ul>
             </div>
             <div className="flex flex-row justify-center items-center gap-10 min-h-2/6 max-h-2/6">
               {project.deployment && (
