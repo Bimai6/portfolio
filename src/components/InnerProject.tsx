@@ -76,9 +76,9 @@ const InnerProject = ({ repos }: ReposProps) => {
           </div>
         </div>
 
-        <div className="flex flex-row items-center p-10 gap-4 flex-wrap w-full h-full">
+        <div className="flex flex-row justify-center p-10 gap-4 flex-wrap w-full h-full">
           <p className="text-4xl w-full mb-5">Stack:</p>
-          <div className="flex place-items-center w-full gap-4">
+          <div className="flex justify-center w-full gap-5">
             {project.stack?.map((techName) => {
               const tech = techs[techName];
               return tech ? (
