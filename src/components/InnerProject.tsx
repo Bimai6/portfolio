@@ -62,15 +62,15 @@ const InnerProject = ({ repos }: ReposProps) => {
           </div>
 
           <div className="flex flex-col h-full w-3/6">
-            <div className="pl-5 border-b border-purple-800 min-h-4/6 max-h-4/6">
-                <ul >
-                  <li className="pb-4 pt-12 text-sm sm:text-base lg:text-2xl xl:text-3xl">Achievements:</li>
+            <div className="flex flex-col w-full pl-5 border-b border-purple-800 min-h-5/6 max-h-5/6">
+                <p className="mb-8 pt-12 text-base sm:text-lg lg:text-3xl xl:text-4xl">Achievements:</p>
+                <ul className="flex flex-col pb-5 w-full h-full">
                   {project.achievements?.map((achievement, i) => 
-                    <li key={i} className="text-xs sm:text-sm lg:text-xl xl:text-2xl">{achievement}</li>
+                    <li key={i} className="list-disc list-inside pb-2 text-xs sm:text-sm lg:text-xl xl:text-2xl">{achievement}</li>
                   )}
                 </ul>
             </div>
-            <div className="flex flex-row justify-center items-center gap-10 min-h-2/6 max-h-2/6">
+            <div className="flex flex-row justify-center items-center gap-10 min-h-1/6 max-h-1/6">
               {project.deployment && (
                 <LinkButton url={project.deployment} text="Demo"/>
               )}
