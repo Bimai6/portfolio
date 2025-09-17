@@ -66,7 +66,7 @@ const InnerProject = ({ repos }: ReposProps) => {
                 <p className="mb-8 pt-12 text-base sm:text-lg lg:text-3xl xl:text-4xl">Achievements:</p>
                 <ul className="flex flex-col pb-5 w-full h-full">
                   {project.achievements?.map((achievement, i) => 
-                    <li key={i} className="list-disc list-inside pb-2 text-xs sm:text-sm lg:text-xl xl:text-2xl">{achievement}</li>
+                    <li key={i} className="list-disc list-inside px-5 pb-2 text-xs sm:text-sm lg:text-xl xl:text-2xl">{achievement}</li>
                   )}
                 </ul>
             </div>
