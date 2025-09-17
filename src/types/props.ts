@@ -13,3 +13,8 @@ export interface SlideProps {
     event: () => void;
     char: string;
 }
+
+export interface ProjectProps extends ReposProps {
+  shouldAnimate: boolean;
+  onAnimationComplete?: () => void;
+}
