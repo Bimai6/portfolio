@@ -1,7 +1,0 @@
-.name_text{
-    font-size: clamp(2.5rem, 7.5vw, 6.25rem);
-}
-
-.statement_text{
-    font-size: clamp(1.5rem, 4vw, 3.25rem);
-}
