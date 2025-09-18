@@ -4,7 +4,7 @@ import { ReposProps } from "../types/props";
 
 const Home = ({ repos }: ReposProps) => {
   return (
-    <div className="flex flex-row h-full">
+    <div className="flex flex-col lg:flex-row w-full h-full">
       <ProjectList repos={repos} />
       <Poster />
     </div>

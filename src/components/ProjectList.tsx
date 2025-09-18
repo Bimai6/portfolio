@@ -10,7 +10,6 @@ const ProjectList = ({ repos }: ReposProps) => {
   const [shouldAnimateIcons, setShouldAnimateIcons] = useState(false);
 
   useEffect(() => {
-    // Solo animar si es la primera recarga de la sesión
     const projectsAnimated = sessionStorage.getItem("projectsAnimated") === "true";
     if (!projectsAnimated) {
       setShouldAnimateProjects(true);
@@ -19,13 +18,11 @@ const ProjectList = ({ repos }: ReposProps) => {
 
   const handleProjectsComplete = () => {
     sessionStorage.setItem("projectsAnimated", "true");
-
-    // Animación de iconos 0.2s después
     setTimeout(() => setShouldAnimateIcons(true), 200);
   };
 
   return (
-    <div className="bg-purple-800 h-screen w-full md:w-2/3 flex flex-col justify-end pb-6">
+    <div className="flex flex-col order-2 lg:order-1 bg-purple-800 h-screen w-full pb-6">
       <Project
         repos={repos}
         shouldAnimate={shouldAnimateProjects}

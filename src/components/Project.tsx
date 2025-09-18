@@ -10,7 +10,7 @@ const Project = ({ repos, shouldAnimate, onAnimationComplete }: ProjectProps) =>
   const [hoveredRepo, setHoveredRepo] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-col justify-start w-full h-5/6 mb-28">
+    <div className="flex flex-col justify-start w-full h-full mb-28">
       {repos.map((repo, index) => (
         <motion.div
           key={repo.name}
@@ -31,7 +31,7 @@ const Project = ({ repos, shouldAnimate, onAnimationComplete }: ProjectProps) =>
             }
           }}
         >
-          <p className={`pl-4 pr-10 ${hoveredRepo === repo.name ? "text-lg" : "text-6xl"} font-extrabold pb-7`}>
+          <p className={`pl-4 pr-10 font-extrabold pb-7 ${hoveredRepo === repo.name ? "text-2xl" : "text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl"}`}>
             {hoveredRepo === repo.name ? repo.description ?? repo.formattedTitle : repo.formattedTitle}
           </p>
           <p className="pr-6 text-2xl pb-7">{repo.formattedDate}</p>
