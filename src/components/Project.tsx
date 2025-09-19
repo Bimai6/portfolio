@@ -17,7 +17,7 @@ const Project = ({ repos, shouldAnimate, onAnimationComplete }: ProjectProps) =>
           initial={shouldAnimate ? { opacity: 0, x: -150 } : undefined}
           animate={shouldAnimate ? { opacity: 1, x: 0 } : undefined}
           transition={shouldAnimate ? { ...spring, delay: index * 0.6 } : undefined}
-          className={`hover:bg-white hover:cursor-pointer hover:text-purple-800 flex flex-row items-end justify-between w-full h-1/6 text-white ${
+          className={`hover:bg-white hover:cursor-pointer hover:text-purple-800 flex flex-row items-end justify-center md:justify-between md:pt-7 pt-14 pb-7 md:pb-0 w-full lg:h-1/6 text-white ${
             hoveredRepo === repo.name ? "border-r border-purple-800" : "border-b border-white"
           }`}
           onMouseEnter={() => setHoveredRepo(repo.name)}
@@ -31,10 +31,10 @@ const Project = ({ repos, shouldAnimate, onAnimationComplete }: ProjectProps) =>
             }
           }}
         >
-          <p className={`pl-4 pr-10 font-extrabold pb-7 ${hoveredRepo === repo.name ? "text-2xl" : "text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl"}`}>
+          <p className={`pl-4 pr-10 font-extrabold pb-7 ${hoveredRepo === repo.name ? "md:text-xl lg:text-lg xl:text-2xl" : "text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl"}`}>
             {hoveredRepo === repo.name ? repo.description ?? repo.formattedTitle : repo.formattedTitle}
           </p>
-          <p className="pr-6 text-2xl pb-7">{repo.formattedDate}</p>
+          <p className="pr-6 hidden md:flex md:text-2xl lg:text-lg xl:text-xl 2xl:text-2xl pb-7">{repo.formattedDate}</p>
         </motion.div>
       ))}
     </div>
