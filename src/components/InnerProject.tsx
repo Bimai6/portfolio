@@ -30,15 +30,15 @@ const InnerProject = ({ repos }: ReposProps) => {
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="flex flex-row h-screen">
-      <div className="flex flex-col w-full bg-white text-purple-800">
+    <div className="flex flex-row w-screen h-screen overflow-x-hidden">
+      <div className="flex flex-col h-auto w-full bg-white text-purple-800">
         <div className="flex flex-row justify-between items-end bg-purple-800 text-white py-7 px-10">
-          <p className="font-extrabold text-6xl">{project.formattedTitle}</p>
-          <p className="text-2xl">{project.formattedDate}</p>
+          <p className="font-extrabold text-4xl sm:text-5xl md:text-6xl">{project.formattedTitle}</p>
+          <p className="hidden lg:flex text-2xl">{project.formattedDate}</p>
         </div>
 
-        <div className="flex flex-row border-b border-purple-800">
-          <div id="carousel" className="w-4/6 border-r border-purple-800">
+        <div className="flex flex-col lg:flex-row border-b border-purple-800">
+          <div id="carousel" className="w-full lg:w-4/6 lg:border-r border-b lg:border-b-0 border-purple-800">
             <div className="overflow-hidden h-[450px]">
               {images.map((image, index) => (
                 <div
@@ -61,16 +61,16 @@ const InnerProject = ({ repos }: ReposProps) => {
             </div>
           </div>
 
-          <div className="flex flex-col h-full w-3/6">
-            <div className="flex flex-col w-full pl-5 border-b border-purple-800 min-h-5/6 max-h-5/6">
-                <p className="mb-8 pt-12 text-base sm:text-lg lg:text-3xl xl:text-4xl">Achievements:</p>
-                <ul className="flex flex-col pb-5 w-full h-full">
+          <div className="flex flex-col h-full w-full lg:w-3/6">
+            <div className="flex flex-col w-full pl-5 border-b border-purple-800 h-5/6">
+                <p className="mb-8 pt-12 pl-5 lg:pl-0 text-4xl">Achievements:</p>
+                <ul className="flex flex-col justify-self-center pb-10 lg:pb-5 w-full h-full">
                   {project.achievements?.map((achievement, i) => 
-                    <li key={i} className="list-disc list-inside px-5 pb-2 text-xs sm:text-sm lg:text-xl xl:text-2xl">{achievement}</li>
+                    <li key={i} className="list-disc list-inside px-5 pb-4 md:pb-7 lg:pb-5 xl:pb-2 text-xl md:text-2xl lg:text-xl xl:text-2xl">{achievement}</li>
                   )}
                 </ul>
             </div>
-            <div className="flex flex-row justify-center items-center gap-10 min-h-1/6 max-h-1/6">
+            <div className="flex flex-row justify-center items-center py-15 lg:py-5 gap-10 w-full h-10 lg:h-1/6">
               {project.deployment && (
                 <LinkButton url={project.deployment} text="Demo"/>
               )}
@@ -79,9 +79,9 @@ const InnerProject = ({ repos }: ReposProps) => {
           </div>
         </div>
 
-        <div className="flex flex-row justify-center p-10 gap-4 flex-wrap w-full h-full">
+        <div className="flex flex-row justify-center p-10 gap-4 flex-wrap h-full">
           <p className="text-4xl w-full mb-5">Stack:</p>
-          <div className="flex justify-center w-full gap-5">
+          <div className="grid lg:flex grid-cols-3 md:pl-15 justify-center w-5/6 gap-5 lg:gap-3 xl:gap-5">
             {project.stack?.map((techName) => {
               const tech = techs[techName];
               return tech ? (
@@ -90,7 +90,7 @@ const InnerProject = ({ repos }: ReposProps) => {
                 src={tech.logo}
                 alt={techName}
                 title={techName}
-                className="h-30 w-30"
+                className="md:h-30 md:w-30 lg:h-23 lg:w-23 xl:h-28 xl:w-28 2xl:h-30 2xl:w-30"
               />
               ) : null;
             })}
@@ -99,7 +99,7 @@ const InnerProject = ({ repos }: ReposProps) => {
       </div>
 
       <div
-        className="transition-all duration-200 ease-in-out hover:text-5xl hover:w-25 hover:cursor-pointer w-20 h-screen bg-gray-500 flex justify-center text-white text-4xl items-center"
+        className="transition-all duration-200 ease-in-out hover:text-5xl hover:w-25 hover:cursor-pointer w-20 h-screen bg-gray-500 hidden lg:flex justify-center text-white text-4xl items-center"
         onClick={() => navigate("/")}
       >
         ❯
