@@ -1,14 +1,15 @@
-import { token } from "../../secret";
 import { Repo } from "@/models/Repo";
 import { selectedRepos } from "@/config/criteria";
 import { Project } from "@/types/project";
 import { projectExtras } from "@/data/projectExtraFields";
 
+const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
+
 export async function getRepos(): Promise<Repo[]> {
   try {
     const response = await fetch("https://api.github.com/user/repos", {
       headers: {
-        Authorization: `token ${token}`,
+        Authorization: `token ${GITHUB_TOKEN}`,
         Accept: "application/vnd.github.v3+json",
       },
     });
