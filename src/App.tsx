@@ -31,7 +31,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home repos={repos} />} />
         <Route
-          path="/project/:repoName"
+          path="/:repoName"
           element={<InnerProject repos={repos} />}
         />
       </Routes>

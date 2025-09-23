@@ -22,7 +22,7 @@ const Project = ({ repos, shouldAnimate, onAnimationComplete }: ProjectProps) =>
           }`}
           onMouseEnter={() => setHoveredRepo(repo.name)}
           onMouseLeave={() => setHoveredRepo(null)}
-          onClick={() => navigate(`/project/${repo.name}`)}
+          onClick={() => navigate(`/${repo.name}`)}
           onAnimationComplete={() => {
             if (!shouldAnimate) return;
             completedCountRef.current += 1;
