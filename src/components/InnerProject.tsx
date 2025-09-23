@@ -5,12 +5,14 @@ import { ReposProps } from "../types/props";
 import { techs } from "../data/techs";
 import LinkButton from "./LinkButton";
 import SlideButton from "./SlideButton";
+import { useMediaQuery } from "react-responsive";
 
 const InnerProject = ({ repos }: ReposProps) => {
   const { repoName } = useParams();
   const navigate = useNavigate();
   const [project, setProject] = useState<Project | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isTablet = useMediaQuery({maxWidth: 1023});
 
   useEffect(() => {
     if (repoName) {
@@ -30,11 +32,11 @@ const InnerProject = ({ repos }: ReposProps) => {
   const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-    <div className="flex flex-row w-screen h-screen overflow-x-hidden">
-      <div className="flex flex-col h-auto w-full bg-white text-purple-800">
+    <div className="flex flex-row w-full min-h-screen overflow-x-hidden">
+      <div className="flex flex-col h-auto w-full bg-white text-purple-800 box-border">
         <div className="flex flex-row justify-between items-end bg-purple-800 text-white py-7 px-10">
           <p className="font-extrabold text-4xl sm:text-5xl md:text-6xl">{project.formattedTitle}</p>
-          <p className="hidden lg:flex text-2xl">{project.formattedDate}</p>
+          {isTablet ? <img className="cursor-pointer bg-white w-9 scale-x-[-1] sm:w-11 md:w-14 rounded-full py-2 px-2" src="https://res.cloudinary.com/dus7e3jkj/image/upload/v1758622593/back-svgrepo-com_1_expgfp.svg" alt="Back button" onClick={()=> navigate("/")}/> : <p className="flex text-2xl">{project.formattedDate}</p>}
         </div>
 
         <div className="flex flex-col lg:flex-row border-b border-purple-800">
@@ -99,7 +101,7 @@ const InnerProject = ({ repos }: ReposProps) => {
       </div>
 
       <div
-        className="transition-all duration-200 ease-in-out hover:text-5xl hover:w-25 hover:cursor-pointer w-20 h-screen bg-gray-500 hidden lg:flex justify-center text-white text-4xl items-center"
+        className="transition-all duration-200 ease-in-out hover:text-5xl hover:w-25 hover:cursor-pointer w-20 min-h-screen bg-gray-500 hidden lg:flex justify-center text-white text-4xl items-center"
         onClick={() => navigate("/")}
       >
         ❯
