@@ -5,7 +5,7 @@ export const projectExtras: Record<string, {
     achievements?: string[];
 }> = {
     "magnolia-hotels": {
-        stack: ["JavaScript", "React", "Node", "MongoDB", "Vercel", "Bootstrap", "MUI"],
+        stack: ["JavaScript", "React", "Vercel", "Bootstrap", "MUI"],
         images: ["https://res.cloudinary.com/dk1g12n2h/image/upload/v1740390718/homePage_v6r72r.png", "https://res.cloudinary.com/dk1g12n2h/image/upload/v1740473446/Restaurante_s4pswh.png", "https://res.cloudinary.com/dk1g12n2h/image/upload/v1740473324/reservaDesktop_eprhaw.png", "https://res.cloudinary.com/dk1g12n2h/image/upload/v1740472850/cartaDesktop_dfdc5y.png"],
         deployment: "https://magnolia-hotels.vercel.app/",
         achievements:["Implemented a React frontend using Hooks and React Router for navigation.", "Simulated backend CRUD using JSON Server and a db.json file.", "Built protected routes and form handling for create/read/update/delete.", "Focused on responsive layout and UI polish appropriate for a hotel product."]
