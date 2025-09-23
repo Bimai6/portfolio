@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getRepos } from "./services/githubService";
-import { Repo } from "./models/Repo";
-import Home from "./pages/Home";
-import InnerProject from "./components/InnerProject";
+import { getRepos } from "@/services/githubService";
+import { Repo } from "@/models/Repo";
+import Home from "@/pages/Home";
+import InnerProject from "@/components/InnerProject";
 
 const App = () => {
   const [repos, setRepos] = useState<Repo[]>([]);

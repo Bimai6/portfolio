@@ -1,8 +1,8 @@
 import { token } from "../../secret";
-import { Repo } from "../models/Repo";
-import { selectedRepos } from "../config/criteria";
-import { Project } from "../types/project";
-import { projectExtras } from "../data/projectExtraFields";
+import { Repo } from "@/models/Repo";
+import { selectedRepos } from "@/config/criteria";
+import { Project } from "@/types/project";
+import { projectExtras } from "@/data/projectExtraFields";
 
 export async function getRepos(): Promise<Repo[]> {
   try {

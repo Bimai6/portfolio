@@ -1,4 +1,4 @@
-import { SlideProps } from "../types/props"
+import { SlideProps } from "@/types/props"
 
 const SlideButton = ({event, char}: SlideProps) => {
     return(

@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Project } from "../types/project";
-import { ReposProps } from "../types/props";
-import { techs } from "../data/techs";
-import LinkButton from "./LinkButton";
-import SlideButton from "./SlideButton";
+import { Project } from "@/types/project";
+import { ReposProps } from "@/types/props";
+import { techs } from "@/data/techs";
+import LinkButton from "@/components/LinkButton";
+import SlideButton from "@/components//SlideButton";
 import { useMediaQuery } from "react-responsive";
 
 const InnerProject = ({ repos }: ReposProps) => {

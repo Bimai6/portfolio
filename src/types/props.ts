@@ -1,4 +1,4 @@
-import { Repo } from "../models/Repo";
+import { Repo } from "@/models/Repo";
 
 export interface ReposProps {
     repos: Repo[];

@@ -1,7 +1,7 @@
 import Project from "./Project";
-import { socialLinks } from "../data/socialLinks";
-import "/src/styles.css";
-import { ReposProps } from "../types/props";
+import { socialLinks } from "@/data/socialLinks";
+import "@/styles.css";
+import { ReposProps } from "@/types/props";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 

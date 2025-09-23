@@ -1,6 +1,6 @@
-import Poster from "../components/Poster";
-import ProjectList from "../components/ProjectList";
-import { ReposProps } from "../types/props";
+import Poster from "@/components/Poster";
+import ProjectList from "@/components/ProjectList";
+import { ReposProps } from "@/types/props";
 
 const Home = ({ repos }: ReposProps) => {
   return (

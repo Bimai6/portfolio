@@ -1,4 +1,4 @@
-import { SocialLink } from "../models/SocialLink";
+import { SocialLink } from "@/models/SocialLink";
 
 export const socialLinks: SocialLink[] = [
     new SocialLink("GitHub Logo", "https://res.cloudinary.com/demqnwfff/image/upload/v1741289209/gh-white_q5jbqn.png", "https://github.com/Bimai6"),

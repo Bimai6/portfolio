@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { ProjectProps } from "../types/props";
+import { ProjectProps } from "@/types/props";
 import { motion } from "framer-motion";
-import { spring } from "../types/transitions";
+import { spring } from "@/types/transitions";
 import { useState } from "react";
 
 const Project = ({ repos, shouldAnimate, onAnimationComplete }: ProjectProps) => {

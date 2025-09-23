@@ -1,4 +1,4 @@
-import { Repo } from "../models/Repo";
+import { Repo } from "@/models/Repo";
 
 export type Project = Repo & {
     stack?: string[];
