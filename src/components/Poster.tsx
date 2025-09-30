@@ -8,7 +8,7 @@ const Poster = () => {
                     <p>MARIO</p>
                     <p>LEBRERO</p>
                 </div>
-                <img className="self-center h-auto lg:w-4/6 md:w-3/6 w-4/6"
+                <img className="self-center h-auto sm:max-w-[350px] md:max-w-[400px] lg:max-w-[8000px] lg:w-4/6 md:w-3/6 w-4/6"
                 src="https://res.cloudinary.com/demqnwfff/image/upload/v1741285597/mepurple_ljpwvb.png" alt="Mario Lebrero's portrait"/>
                 <div className="mx-5 flex flex-col place-items-end text-5xl mt-auto mb-7">
                     <p>WEB</p>
