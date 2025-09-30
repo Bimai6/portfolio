@@ -15,6 +15,11 @@ export interface SlideProps {
 }
 
 export interface ProjectProps extends ReposProps {
-  shouldAnimate: boolean;
-  onAnimationComplete?: () => void;
+    shouldAnimate: boolean;
+    onAnimationComplete?: () => void;
+}
+
+export interface FrontPosterProps {
+    isNotClicked: boolean;
+    isNotLargeScreen: boolean;
 }
