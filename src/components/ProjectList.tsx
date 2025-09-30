@@ -34,7 +34,7 @@ const ProjectList = ({ repos }: ReposProps) => {
           <a key={index} href={url} target="_blank" rel="noopener noreferrer">
             {shouldAnimateProjects ? (
               <motion.img
-                className="w-30 cursor-pointer"
+                className="w-24 md:w-30 cursor-pointer"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={shouldAnimateIcons ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
                 transition={{ type: "spring", stiffness: 150, damping: 15, delay: index * 0.2 }}
@@ -43,7 +43,7 @@ const ProjectList = ({ repos }: ReposProps) => {
                 alt={alt}
               />
             ) : (
-              <img className="w-30 cursor-pointer hover:scale-110 transition-transform duration-300" src={image} alt={alt} />
+              <img className="w-24 md:w-30 cursor-pointer hover:scale-110 transition-transform duration-200 ease-in" src={image} alt={alt} />
             )}
           </a>
         ))}
