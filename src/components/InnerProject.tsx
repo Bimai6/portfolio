@@ -122,7 +122,7 @@ const InnerProject = ({ repos }: ReposProps) => {
       </div>
 
       <div
-        className="order-1 lg:order-2 transition-all duration-200 ease-in-out hover:py-7 hover:text-7xl lg:hover:w-25 lg:hover:text-5xl hover:cursor-pointer lg:min-h-screen bg-gray-500 flex justify-center items-center text-white text-4xl lg:w-20"
+        className="order-1 lg:order-2 transition-all duration-200 ease-in-out py-3 text-5xl lg:hover:w-25 lg:hover:text-5xl hover:cursor-pointer lg:min-h-screen bg-gray-500 flex justify-center items-center text-white lg:text-4xl lg:w-20"
         onClick={() => navigate("/")}
       >
         <div className="rotate-270 lg:rotate-0">❯</div>

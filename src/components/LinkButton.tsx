@@ -6,7 +6,7 @@ const LinkButton = ({url, text}: LinkProps) => {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-purple-800 text-white text-4xl px-6 py-2 rounded-full"
+            className="bg-purple-800 text-white text-3xl sm:text-4xl px-6 py-2 rounded-full"
         >
             {text}
         </a>
