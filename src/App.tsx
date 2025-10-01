@@ -4,6 +4,7 @@ import { getRepos } from "@/services/githubService";
 import { Repo } from "@/models/Repo";
 import Home from "@/pages/Home";
 import InnerProject from "@/components/InnerProject";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
@@ -28,6 +29,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home repos={repos} />} />
         <Route
