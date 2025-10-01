@@ -5,7 +5,7 @@ const BackPoster = () => (
     >
         <p className="text-4xl font-bold mb-4">ABOUT ME</p>
         <p className="text-lg">
-            Frontend Developer & Designer, passionate about React, TypeScript, and creating beautiful UI.
+            Web developer, passionate about programming, creating beautiful UI, eager to grow my skills and keep learning every day.
         </p>
     </div>
 );
