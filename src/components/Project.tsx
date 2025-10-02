@@ -10,7 +10,7 @@ const Project = ({ repos, shouldAnimate, onAnimationComplete }: ProjectProps) =>
   const [hoveredRepo, setHoveredRepo] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-col justify-start w-full h-full mb-28">
+    <div className="flex flex-col justify-start w-full h-full lg:mb-28">
       {repos.map((repo, index) => (
         <motion.div
           key={repo.name}
@@ -31,8 +31,8 @@ const Project = ({ repos, shouldAnimate, onAnimationComplete }: ProjectProps) =>
             }
           }}
         >
-          <p className={`pl-4 pr-10 font-extrabold pb-7 ${hoveredRepo === repo.name ? "md:text-xl lg:text-lg xl:text-2xl" : "text-3xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl"}`}>
-            {hoveredRepo === repo.name ? repo.description ?? repo.formattedTitle : repo.formattedTitle}
+          <p className={`md:pl-8 font-extrabold pb-7 ${hoveredRepo === repo.name ? "px-5 md:text-xl lg:text-lg xl:text-2xl" : "text-3xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl"}`}>
+            {hoveredRepo === repo.name ? repo.description ?? "No description available." : repo.formattedTitle}
           </p>
           <p className="pr-6 hidden md:flex md:text-2xl lg:text-lg xl:text-xl 2xl:text-2xl pb-7">{repo.formattedDate}</p>
         </motion.div>

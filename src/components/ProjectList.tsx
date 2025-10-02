@@ -22,14 +22,14 @@ const ProjectList = ({ repos }: ReposProps) => {
   };
 
   return (
-    <div className="flex flex-col order-2 lg:order-1 bg-purple-800 h-full lg:h-screen w-full pb-6">
+    <div className="flex flex-col order-2 lg:order-1 bg-purple-800 h-full lg:h-screen w-full">
       <Project
         repos={repos}
         shouldAnimate={shouldAnimateProjects}
         onAnimationComplete={handleProjectsComplete}
       />
 
-      <div className="flex gap-6 mt-6 mb-5 lg:mb-0 justify-center lg:justify-start">
+      <div className="flex gap-4 lg:ml-4 mt-20 mb-10 lg:mb-0 justify-center lg:justify-start">
         {socialLinks.map(({ alt, image, url }, index) => (
           <a key={index} href={url} target="_blank" rel="noopener noreferrer">
             {shouldAnimateProjects ? (
