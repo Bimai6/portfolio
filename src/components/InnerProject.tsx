@@ -6,6 +6,7 @@ import { techs } from "@/data/techs";
 import LinkButton from "@/components/LinkButton";
 import SlideButton from "@/components/SlideButton";
 import mediumZoom from "medium-zoom";
+import HomeButton from "./HomeButton";
 
 const InnerProject = ({ repos }: ReposProps) => {
   const { repoName } = useParams();
@@ -104,7 +105,7 @@ const InnerProject = ({ repos }: ReposProps) => {
 
         <div className="flex flex-row justify-center p-10 gap-4 flex-wrap h-full">
           <p className="text-4xl w-full mb-5">Stacks:</p>
-          <div className="grid lg:flex grid-cols-3 md:pl-15 justify-center w-5/6 gap-5 lg:gap-3 xl:gap-5">
+          <div className="grid mb-30 lg:mb-0 lg:flex grid-cols-3 md:pl-15 justify-center w-5/6 gap-5 lg:gap-3 xl:gap-5">
             {project.stack?.map((techName) => {
               const tech = techs[techName];
               return tech ? (
@@ -122,11 +123,13 @@ const InnerProject = ({ repos }: ReposProps) => {
       </div>
 
       <div
-        className="order-1 lg:order-2 transition-all duration-200 ease-in-out py-3 text-5xl lg:hover:w-25 lg:hover:text-5xl hover:cursor-pointer lg:min-h-screen bg-gray-500 flex justify-center items-center text-white lg:text-4xl lg:w-20"
+        className="order-2 transition-all duration-200 ease-in-out py-3 hover:w-25 hover:text-5xl hover:cursor-pointer min-h-screen bg-gray-500 hidden lg:flex justify-center items-center text-white text-4xl w-20"
         onClick={() => navigate("/")}
       >
-        <div className="rotate-270 lg:rotate-0">❯</div>
+        ❯
       </div>
+
+      <HomeButton />
     </div>
   );
 };
