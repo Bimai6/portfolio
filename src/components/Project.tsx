@@ -31,7 +31,7 @@ const Project = ({ repos, shouldAnimate, onAnimationComplete }: ProjectProps) =>
             }
           }}
         >
-          <p className={`md:pl-8 font-extrabold pb-7 ${hoveredRepo === repo.name ? "px-5 md:text-xl lg:text-lg xl:text-2xl" : "text-3xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl"}`}>
+          <p className={`md:pl-8 font-extrabold pb-7 ${hoveredRepo === repo.name ? "px-5 md:my-2 md:text-xl lg:text-lg xl:text-2xl" : "text-3xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl"}`}>
             {hoveredRepo === repo.name ? repo.description ?? "No description available." : repo.formattedTitle}
           </p>
           <p className="pr-6 hidden md:flex md:text-2xl lg:text-lg xl:text-xl 2xl:text-2xl pb-7">{repo.formattedDate}</p>

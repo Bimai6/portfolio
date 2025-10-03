@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FrontPoster from "./FrontPoster";
 import BackPoster from "./BackPoster";
+import { handleWindowResize } from "@/utils/functions";
 
 const Poster = () => {
     const [flipped, setFlipped] = useState(false);
@@ -10,10 +11,7 @@ const Poster = () => {
     const [isLargeScreen, setIsLargeScreen] = useState(false);
 
     useEffect(() => {
-        const handleResize = () => setIsLargeScreen(window.innerWidth >= 1024);
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
+        handleWindowResize(setIsLargeScreen)
     }, []);
 
     const handleClick = () => {
