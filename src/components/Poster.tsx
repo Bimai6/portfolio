@@ -24,7 +24,6 @@ const Poster = () => {
             <motion.div
                 className="flex flex-col h-full w-full"
                 style={{ perspective: 1000, transformStyle: "preserve-3d" }}
-                onClick={handleClick}
                 whileHover={isLargeScreen ? { rotateY: 180 } : undefined}
                 animate={flipped ? { rotateY: 180 } : { rotateY: 0 }}
                 transition={{ duration: 0.8 }}
@@ -38,8 +37,8 @@ const Poster = () => {
                 }}
             >
                 <AnimatePresence mode="wait">
-                    {!showBack && <FrontPoster isNotClicked={!clicked} isNotLargeScreen={!isLargeScreen} key="front" />}
-                    {showBack && <BackPoster key="back" />}
+                    {!showBack && <FrontPoster handleClick={handleClick} isNotClicked={!clicked} isNotLargeScreen={!isLargeScreen} key="front" />}
+                    {showBack && <BackPoster handleClick={handleClick} key="back" />}
                 </AnimatePresence>
             </motion.div>
         </div>

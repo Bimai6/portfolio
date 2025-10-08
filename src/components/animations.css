@@ -1,0 +1,44 @@
+@keyframes pulse-scale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes mario-lebrero {
+    0% { opacity: 0; transform: translateY(300px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes web-developer {
+    0% { opacity: 0; transform: translateY(-300px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes about-me {
+    0% { opacity: 0; transform: translateY(-15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stories {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.animate-pulse-scale {
+    animation: pulse-scale 4s ease-in-out 1.3s infinite;
+}
+
+.animate-mario-lebrero {
+    animation: mario-lebrero 0.5s ease-in;
+}
+
+.animate-web-developer {
+    animation: web-developer 0.5s ease-in;
+}
+
+.animate-about-me {
+    animation: about-me 1.2s ease-in;
+}
+
+.animate-stories {
+    animation: stories 1.2s ease-in;
+}

@@ -3,6 +3,7 @@ export class PosterHighlight {
         public text: string,
         public img: string,
         public quote: string,
+        public author: string,
         public alt: string
     ){}
 }

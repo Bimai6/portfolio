@@ -20,6 +20,11 @@ export interface ProjectProps extends ReposProps {
 }
 
 export interface FrontPosterProps {
+    handleClick: () => void;
     isNotClicked: boolean;
     isNotLargeScreen: boolean;
+}
+
+export interface BackPosterProps {
+    handleClick: () => void;
 }
