@@ -95,7 +95,6 @@ npm run dev
 - **vite**
 - **@vitejs/plugin-react-swc**
 - **eslint**, **eslint-plugin-react-hooks**
-- **vitest**, **@testing-library/react**
 - **@types/react**, **@types/react-dom**
 
 ---
