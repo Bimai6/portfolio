@@ -21,7 +21,7 @@ export async function getRepos(): Promise<Repo[]> {
       .map(
         (repo: any) =>
           new Repo(
-            repo.name,
+            repo.name !== "argio-studios-legacy" ? repo.name : "argio-studios",
             repo.html_url,
             repo.description,
             repo.language,
